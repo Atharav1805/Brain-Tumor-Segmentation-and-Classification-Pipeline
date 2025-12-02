@@ -1,0 +1,23 @@
+{
+  "input": "Data/converted_npy/3016_image.npy",
+  "seg_model": "Outputs/UNet_preprocessed/best_unet.keras",
+  "clf_model": "Outputs/Classifier/folds/fold_2/best_model.keras",
+  "bbox": [
+    128,
+    128,
+    384,
+    384
+  ],
+  "class_probs": [
+    0.0005116487154737115,
+    0.5186591148376465,
+    0.48082926869392395
+  ],
+  "class_pred": "Glioma",
+  "files": {
+    "mask": "3016_image_20251123_184602_mask.png",
+    "overlay": "3016_image_20251123_184602_overlay.png",
+    "crop": "3016_image_20251123_184602_crop.png",
+    "probmap": "3016_image_20251123_184602_probmap.png"
+  }
+}

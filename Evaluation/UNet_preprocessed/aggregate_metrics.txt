@@ -1,0 +1,21 @@
+Segmentation evaluation summary
+{
+  "timestamp": "2025-11-15T00:49:27.130407",
+  "n_samples": 3064,
+  "dice_mean": 0.6895213707852736,
+  "dice_std": 0.34892197711580175,
+  "dice_min": 2.0387359836859558e-12,
+  "dice_max": 0.9849462365591758,
+  "iou_mean": 0.6146835505997131,
+  "iou_std": 0.33622113518613367,
+  "accuracy_mean": 0.9927194510676531,
+  "accuracy_std": 0.010608519389364615,
+  "sensitivity_mean": 0.658582695401619,
+  "sensitivity_std": 0.3626302260122714,
+  "specificity_mean": 0.9993490189752158,
+  "specificity_std": 0.0013094138800486034,
+  "precision_mean": 0.9304201983998196,
+  "precision_std": 0.14068255607572186,
+  "f1_mean": 0.703461195215392,
+  "f1_std": 0.3404369424920498
+}

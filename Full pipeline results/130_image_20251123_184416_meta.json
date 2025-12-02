@@ -1,0 +1,23 @@
+{
+  "input": "Data/converted_npy/130_image.npy",
+  "seg_model": "Outputs/UNet_preprocessed/best_unet.keras",
+  "clf_model": "Outputs/Classifier/folds/fold_2/best_model.keras",
+  "bbox": [
+    224,
+    130,
+    394,
+    264
+  ],
+  "class_probs": [
+    0.907050609588623,
+    0.0929461270570755,
+    3.285997763669002e-06
+  ],
+  "class_pred": "Meningioma",
+  "files": {
+    "mask": "130_image_20251123_184416_mask.png",
+    "overlay": "130_image_20251123_184416_overlay.png",
+    "crop": "130_image_20251123_184416_crop.png",
+    "probmap": "130_image_20251123_184416_probmap.png"
+  }
+}
