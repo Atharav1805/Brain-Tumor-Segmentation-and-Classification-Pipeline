@@ -24,18 +24,11 @@ A cleaned NumPy MRI dataset is also available:
 
 # 📌 Pipeline Overview
 
-## 🔷 **Workflow Summary**
-
-<p align="center">
-  <img src="unet_flowchart.png" width="700">
-</p>
-
----
 
 # 1️⃣ Segmentation (UNet)
 
 <p align="center">
-  <img src="unet_architecture_horizontal.png" width="700">
+  <img src="unet_flowchart.png" width="700">
 </p>
 
 ### Steps:
@@ -95,7 +88,7 @@ Example Grad-CAMs show attention regions used by the classifier:
 
 ---
 
-# 🔻 4️⃣ Full Pipeline Visualization
+#  4️⃣ Full Pipeline Visualization
 
 (`Utils/full_pipeline_viz.py`)
 
