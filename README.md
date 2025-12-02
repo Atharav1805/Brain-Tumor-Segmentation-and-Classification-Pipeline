@@ -308,9 +308,8 @@ Includes:
 
 # 👤 Author
 
-Atharav Sonawane
-Deep Learning · Computer Vision · Medical Imaging
+### **Atharav Sonawane**  
+*Deep Learning · Computer Vision · Medical Imaging*
 
-Kaggle: https://www.kaggle.com/atharavsonawane
-
-GitHub: https://github.com/Atharav1805
+[![Kaggle](https://img.shields.io/badge/Kaggle-Profile-blue?logo=kaggle&style=flat)](https://www.kaggle.com/atharavsonawane)
+[![GitHub](https://img.shields.io/badge/GitHub-Atharav1805-black?logo=github&style=flat)](https://github.com/Atharav1805)
