@@ -4,28 +4,137 @@
 
 This repository contains a complete, end-to-end deep learning pipeline for brain tumor segmentation and classification using axial MRI scans.
 
-It includes training scripts, inference modules, preprocessing utilities, visualization tools, model architectures, evaluation methods, and full pipeline outputs.
-
-A cleaned and standardized NumPy MRI dataset is also provided on Kaggle:
-➡️ **Dataset (Kaggle):** [Cleaned Brain Tumor MRI Dataset (NumPy Version)](https://www.kaggle.com/datasets/atharavsonawane/cleaned-brain-tumor-mri-dataset-numpy-version)
+A cleaned NumPy MRI dataset is also available:  
+➡️ **Kaggle Dataset:** https://www.kaggle.com/datasets/atharavsonawane/cleaned-brain-tumor-mri-dataset-numpy-version
 
 ---
 
 ## 🌟 Features
 
-* **UNet-based tumor segmentation**
-* **Custom CNN & EfficientNet classifier**
-* Exact training-consistent preprocessing (z-score + scaling)
-* Automatic ROI extraction using segmentation mask
-* FP/FN visualization + contour overlays
-* Full A4 scientific 6-panel pipeline figure
-* GRAD-CAM visualization for classifier interpretability
-* Training/evaluation scripts for both models
-* Clean directory structure for reproducibility
-* Performance curves (Dice, IoU, loss, accuracy)
-* Utility scripts for noise analysis, metrics, plotting
+- UNet-based tumor segmentation  
+- Custom CNN & EfficientNet classifier  
+- Training-consistent preprocessing (z-score + scaling)  
+- Automatic ROI extraction  
+- Full A4 multi-panel visualization of the pipeline  
+- Grad-CAM interpretability  
+- Cross-validation metrics + performance curves  
+- High-quality overlays, prob-maps, and samples  
 
 ---
+
+# 📌 Pipeline Overview
+
+## 🔷 **Workflow Summary**
+
+<p align="center">
+  <img src="unet_flowchart.png" width="700">
+</p>
+
+---
+
+# 1️⃣ Segmentation (UNet)
+
+<p align="center">
+  <img src="unet_architecture_horizontal.png" width="700">
+</p>
+
+### Steps:
+- MRI → z-score normalization  
+- Resize + channel formatting  
+- UNet produces probability heatmap  
+- Post-processing: thresholding, contours, connected components, morphology  
+
+### **Training Curves**
+<p align="center">
+  <img src="dice_curve.png" width="400">  
+  <img src="iou_curve.png" width="400">  
+</p>
+
+---
+
+# 2️⃣ ROI Extraction
+
+A bounding box is computed from the segmentation mask, padded, cropped, and preprocessed exactly as used during classifier training.
+
+### Example (from `Full pipeline results/`)
+<p align="center">
+  <img src="Full pipeline results/130_image_20251123_184416_overlay.png" width="350">
+  <img src="Full pipeline results/130_image_20251123_184416_mask.png" width="350">
+  <img src="Full pipeline results/130_image_20251123_184416_crop.png" width="350">
+</p>
+
+---
+
+# 3️⃣ Classification (Custom CNN / EfficientNet)
+
+<p align="center">
+  <img src="custom_cnn_architecture_horizontal.png" width="700">
+</p>
+
+### Predicts tumor class:
+- **Meningioma**
+- **Glioma**
+- **Pituitary Tumor**
+
+### Classifier Training Curves
+<p align="center">
+  <img src="accuracy_curve.png" width="400">
+  <img src="loss_curve.png" width="400">
+</p>
+
+---
+
+## 🔥 Grad-CAM Visualization
+
+Example Grad-CAMs show attention regions used by the classifier:
+
+<p align="center">
+  <img src="Evaluation/Classifier/Fold_1/gradcam/sample_3016_true2_pred2.png" width="350">
+  <img src="Evaluation/Classifier/Fold_1/gradcam/sample_1728_true1_pred1.png" width="350">
+</p>
+
+---
+
+# 🔻 4️⃣ Full Pipeline Visualization
+
+(`Utils/full_pipeline_viz.py`)
+
+A six-panel scientific figure is generated for every input MRI:
+
+<p align="center">
+  <img src="Full pipeline results/sample_130.png" width="800">
+</p>
+
+This includes:
+- Original Image  
+- Predicted Mask  
+- Overlay  
+- Probability Heatmap  
+- Cropped ROI  
+- Classifier Output Bar Chart  
+
+---
+
+# 📊 Evaluation Tools
+
+Available in `Evaluation/` and `Utils/`:
+
+- Dice, IoU, pixel accuracy  
+- Boxplots & per-sample metrics  
+- Confusion matrix  
+- ROC / Precision–Recall curves  
+- Calibration curve  
+- t-SNE visualization  
+
+### Examples:
+
+<p align="center">
+  <img src="Evaluation/Classifier/Fold_1/plots/confusion_matrix.png" width="400">
+  <img src="Evaluation/Classifier/Fold_1/plots/roc.png" width="400">
+</p>
+
+---
+
 
 ## 📂 Repository Structure
 
